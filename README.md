@@ -1,6 +1,6 @@
 # Memos Web
 
-基于 Thino / Obsidian 格式的云端 Memos 网页应用。静态前端可部署到 **Cloudflare Pages**、**Netlify**、**Vercel**；memos 数据存储在 **WebDAV** 的 `basic.memos.md` 文件中，打开页面后动态读取并渲染，支持在线编辑。
+基于 memos / Obsidian 格式的云端 Memos 网页应用。静态前端可部署到 **Cloudflare Pages**、**Netlify**、**Vercel**；memos 数据存储在 **WebDAV** 的 `basic.memos.md` 文件中，打开页面后动态读取并渲染，支持在线编辑。
 
 根目录 `basic.memos.md` 是**格式样例**，完整格式说明见下文第 1–3 节。
 
