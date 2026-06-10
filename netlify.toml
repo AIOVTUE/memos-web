@@ -1,13 +1,23 @@
-{
-  "build": {
-    "command": "npm run build",
-    "publish": "dist"
-  },
-  "functions": {
-    "directory": "netlify/functions"
-  },
-  "redirects": [
-    { "from": "/api/*", "to": "/.netlify/functions/api/:splat", "status": 200 },
-    { "from": "/*", "to": "/index.html", "status": 200 }
-  ]
-}
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  # WEBDAV_FILE_PATH 是文件路径，不是密钥；避免与默认路径 basic.memos.md 误报
+  SECRETS_SCAN_OMIT_KEYS = "WEBDAV_FILE_PATH"
+  # 源码/API 路由中含 "memos" 字样，若 SITE_PASSWORD 含相同子串会误报；dist 仍会扫描
+  SECRETS_SCAN_OMIT_PATHS = "src/**,server/**,netlify/**,api/**,functions/**,scripts/**,.env.example,README.md,package.json,package-lock.json,wrangler.toml,basic.memos.md"
+
+[functions]
+  directory = "netlify/functions"
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/api"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

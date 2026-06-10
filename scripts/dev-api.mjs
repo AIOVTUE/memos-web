@@ -84,8 +84,9 @@ createServer(async (req, res) => {
       const text = await response.text();
       res.end(text);
     } catch (e) {
+      console.error('[dev-api]', e);
       res.statusCode = 500;
-      res.end(JSON.stringify({ error: e instanceof Error ? e.message : 'Internal error' }));
+      res.end(JSON.stringify({ error: 'Internal server error' }));
     }
   });
 }).listen(port, () => {

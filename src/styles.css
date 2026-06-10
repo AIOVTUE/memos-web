@@ -2269,6 +2269,7 @@ button {
   }
 
   .memo-board--grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 12px;
   }
 
@@ -2282,11 +2283,14 @@ button {
   }
 
   .page-header__controls {
-    width: 100%;
+    width: auto;
+    margin-left: auto;
     justify-content: flex-end;
   }
 
   .page-header__search {
-    width: min(280px, 100%);
+    width: 168px;
+    flex-shrink: 1;
+    min-width: 0;
   }
 }
