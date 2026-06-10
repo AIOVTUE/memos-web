@@ -1,0 +1,6 @@
+name = "memos-web"
+compatibility_date = "2024-01-01"
+pages_build_output_dir = "dist"
+
+[vars]
+# Set secrets in Cloudflare dashboard: SITE_PASSWORD, WEBDAV_*, AUTH_SECRET
